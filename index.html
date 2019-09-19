@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo</title>
+    <style>
+        body {
+            background: #d1d3d5 !important;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        canvas {
+            box-shadow: 0 0 1rem rgba(0,0,0,0.05);
+            width: 100vw;
+        }
+    </style>
+    <link rel="stylesheet" href="src/css/bootstrap.css">
+</head>
+<body>
+
+<div class="d-flex justify-content-around h-100 w-100 align-items-center" id="canvas-editor-container">
+    <canvas id="c" width="854" height="480"></canvas>
+</div>
+
+<script src="src/js/fabric.js"></script>
+<script src="src/js/editor.js"></script>
+</body>
+</html>
