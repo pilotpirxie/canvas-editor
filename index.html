@@ -6,27 +6,104 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Demo</title>
-    <style>
-        body {
-            background: #d1d3d5 !important;
-            width: 100vw;
-            height: 100vh;
-        }
-
-        canvas {
-            box-shadow: 0 0 1rem rgba(0,0,0,0.05);
-            width: 100vw;
-        }
-    </style>
     <link rel="stylesheet" href="src/css/bootstrap.css">
+    <link rel="stylesheet" href="src/css/simple-sidebar.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Alfa+Slab+One|Annie+Use+Your+Telescope|Audiowide|Bangers|Fira+Mono|Indie+Flower|Knewave|Kreon|Lato|Libre+Baskerville|Libre+Franklin|Lobster|Merriweather|Muli|Nobile|Open+Sans|Oxygen|Pacifico|Playfair+Display|Press+Start+2P|Reenie+Beanie|Roboto|Roboto+Mono|Roboto+Slab|Sarala|Schoolbell|Shadows+Into+Light+Two|Squada+One|Volkhov&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="d-flex justify-content-around h-100 w-100 align-items-center" id="canvas-editor-container">
-    <canvas id="c" width="854" height="480"></canvas>
+<div class="wrapper d-flex">
+    <div class="bg-light border-right sidebar-wrapper p-2 bg-primary">
+        <div class="small">
+            <button type="button" class="btn btn-primary btn-block" id="btn-background">
+                <img src="src/img/mountain-range-on-black-background.svg" class="img-fluid">
+            </button>
+            <button type="button" class="btn btn-primary btn-block" id="btn-text">
+                <img src="src/img/font.svg" class="img-fluid">
+            </button>
+            <button type="button" class="btn btn-primary btn-block" id="btn-drawing">
+                <img src="src/img/pencil-edit-button.svg" class="img-fluid">
+            </button>
+            <button type="button" class="btn btn-primary btn-block" id="btn-decoration">
+                <img src="src/img/stars.svg" class="img-fluid">
+            </button>
+            <button type="button" class="btn btn-primary btn-block" id="btn-audio">
+                <img src="src/img/quaver-outline.svg" class="img-fluid">
+            </button>
+        </div>
+    </div>
+    <div class="bg-light border-right sidebar-wrapper inspector-wrapper d-flex justify-content-around p-4">
+        <div>
+            <h5 class="text-center">
+                Property Inspector
+            </h5>
+            <hr />
+            <div class="form-group">
+                <label>Position</label>
+                <div class="d-flex justify-content-between">
+                    <input type="number" class="col-5 form-control form-control-sm" id="inputX">
+                    <input type="number" class="col-5 form-control form-control-sm" id="inputY">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Scale</label>
+                <div class="d-flex justify-content-between">
+                    <input type="number" class="col-5 form-control form-control-sm" id="inputScaleX" min="0" max="5000">
+                    <input type="number" class="col-5 form-control form-control-sm" id="inputScaleY" min="0" max="5000">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Angle</label>
+                <input type="number" class="form-control form-control-sm" id="inputAngle" min="0" max="360">
+            </div>
+            <div class="form-group">
+                <label>Opacity</label>
+                <input type="number" class="form-control form-control-sm" id="inputOpacity" min="0" max="100">
+            </div>
+            <div class="form-group">
+                <div class="d-flex justify-content-between">
+                    <button class="col-5 btn btn-primary btn-sm" id="btnMoveToTop">Move to Top</button>
+                    <button class="col-5 btn btn-primary btn-sm" id="btnMoveToBottom">Move to Bottom</button>
+                </div>
+            </div>
+            <hr />
+            <div>
+                <div class="form-group">
+                    <label>Font</label>
+                    <select class="form-control form-control-sm">
+                        <option>Default select</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Font Size / Font Color</label>
+                    <div class="d-flex justify-content-between">
+                        <input type="number" class="col-5 form-control form-control-sm" id="inputFontSize" min="1" max="360">
+                        <input type="color" class="col-5 form-control form-control-sm" id="inputFontColor">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Content</label>
+                    <textarea id="inputContent" class="form-control form-control-sm"></textarea>
+                </div>
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="page-content-wrapper">
+        <div class="sidebar-wrapper w-100 d-flex justify-content-around align-items-center" id="canvas-editor-container">
+            <canvas id="c" width="854" height="480"></canvas>
+        </div>
+    </div>
 </div>
+
 
 <script src="src/js/fabric.js"></script>
 <script src="src/js/editor.js"></script>
+<script src="src/js/settings.js"></script>
+<script src="src/js/inspector.js"></script>
 </body>
 </html>
