@@ -52,12 +52,28 @@ document.getElementById('btn-audio').addEventListener('click', ev => {
   openSidebarMenu('audio');
 });
 
-document.getElementById('inputX').addEventListener('change', ev => {
+function updateProperties() {
+  canvas.getObjects().forEach(obj => {
+    if(obj.id === selectedObject.get('id')) {
+      selectedObject.set('left', Number.parseInt(document.getElementById('inputX').value)).setCoords();
+      selectedObject.set('top', Number.parseInt(document.getElementById('inputY').value)).setCoords();
+      selectedObject.set('scaleX', Number.parseFloat(document.getElementById('inputScaleX').value/100)).setCoords();
+      selectedObject.set('scaleY', Number.parseFloat(document.getElementById('inputScaleY').value/100)).setCoords();
+      selectedObject.set('angle', Number.parseInt(document.getElementById('inputAngle').value)).setCoords();
+      selectedObject.set('opacity', Number.parseFloat(document.getElementById('inputOpacity').value/100)).setCoords();
+      canvas.renderAll();
+    }
+  });
+}
 
-});
+document.getElementById('inputX').addEventListener('change', updateProperties);
+document.getElementById('inputY').addEventListener('change', updateProperties);
+document.getElementById('inputScaleX').addEventListener('change', updateProperties);
+document.getElementById('inputScaleY').addEventListener('change', updateProperties);
+document.getElementById('inputAngle').addEventListener('change', updateProperties);
+document.getElementById('inputOpacity').addEventListener('change', updateProperties);
 
 function updateControls(options) {
-  // console.log(options.target);
   selectedObject = options.target;
   document.getElementById('inputX').value = Number.parseInt(options.target.left);
   document.getElementById('inputY').value = Number.parseInt(options.target.top);

@@ -49,7 +49,7 @@ function spawnImage() {
 }
 
 function spawnText(fontFamily) {
-  const text = new fabric.Text('Type Something', {
+  const text = new fabric.IText('Type Something', {
     fontSize: 100,
     fontFamily: fontFamily
   });
@@ -64,7 +64,7 @@ function spawnText(fontFamily) {
     cornerStyle: 'circle',
   });
   text.center();
-  text.id = Math.random();
+  text.id = generateUUID();
 }
 
 function spawnDecoration() {
