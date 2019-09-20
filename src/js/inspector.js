@@ -5,15 +5,21 @@ function closeMenu() {
   document.getElementById('sidebarMenu').classList.remove('d-flex');
   document.getElementById('sidebarMenu').classList.add('d-none');
   canvas.set('isDrawingMode', false);
-  let currentMenu = 'initial';
   canvas.discardActiveObject();
   canvas.renderAll();
+  currentMenu = 'initial';
 }
 
 function openSidebarMenu(type) {
-  if (currentMenu === type) {
-    return false;
+  if (currentMenu === type && type !== 'inspector' && type !== 'inspectorText') {
+    return closeMenu();
   }
+
+  if (type === 'drawing') {
+    canvas.discardActiveObject();
+    canvas.renderAll();
+  }
+
 
   currentMenu = type;
 
