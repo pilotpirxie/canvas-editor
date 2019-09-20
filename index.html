@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Demo</title>
     <link rel="stylesheet" href="src/css/bootstrap.css">
-    <link rel="stylesheet" href="src/css/simple-sidebar.css">
+    <link rel="stylesheet" href="src/css/sidebar.css">
     <link rel="stylesheet" href="src/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Alfa+Slab+One|Annie+Use+Your+Telescope|Audiowide|Bangers|Fira+Mono|Indie+Flower|Knewave|Kreon|Lato|Libre+Baskerville|Libre+Franklin|Lobster|Merriweather|Muli|Nobile|Open+Sans|Oxygen|Pacifico|Playfair+Display|Press+Start+2P|Reenie+Beanie|Roboto|Roboto+Mono|Roboto+Slab|Sarala|Schoolbell|Shadows+Into+Light+Two|Squada+One|Volkhov&display=swap" rel="stylesheet">
 </head>
@@ -33,63 +33,164 @@
             </button>
         </div>
     </div>
-    <div class="bg-light border-right sidebar-wrapper inspector-wrapper d-flex justify-content-around p-4">
-        <div>
-            <h5 class="text-center">
-                Property Inspector
+
+    <div class="bg-light border-right sidebar-wrapper inspector-wrapper d-none justify-content-around pt-4 p-1 sidebar-wide" id="sidebarMenu">
+        <div class="container-fluid">
+
+            <h5 class="d-flex justify-content-end cursor-pointer" id="btn-close">
+                X
             </h5>
-            <hr />
-            <div class="form-group">
-                <label>Position</label>
-                <div class="d-flex justify-content-between">
-                    <input type="number" class="col-5 form-control form-control-sm" id="inputX">
-                    <input type="number" class="col-5 form-control form-control-sm" id="inputY">
-                </div>
-            </div>
-            <div class="form-group">
-                <label>Scale</label>
-                <div class="d-flex justify-content-between">
-                    <input type="number" class="col-5 form-control form-control-sm" id="inputScaleX" min="0" max="5000">
-                    <input type="number" class="col-5 form-control form-control-sm" id="inputScaleY" min="0" max="5000">
-                </div>
-            </div>
-            <div class="form-group">
-                <label>Angle</label>
-                <input type="number" class="form-control form-control-sm" id="inputAngle" min="0" max="360">
-            </div>
-            <div class="form-group">
-                <label>Opacity</label>
-                <input type="number" class="form-control form-control-sm" id="inputOpacity" min="0" max="100">
-            </div>
-            <div class="form-group">
-                <div class="d-flex justify-content-between">
-                    <button class="col-5 btn btn-primary btn-sm" id="btnMoveToTop">Move to Top</button>
-                    <button class="col-5 btn btn-primary btn-sm" id="btnMoveToBottom">Move to Bottom</button>
-                </div>
-            </div>
-            <hr />
-            <div>
+
+            <div id="nothingMenu">
+                <h5 class="text-center">
+                    Property Inspector
+                </h5>
+                <hr />
+
                 <div class="form-group">
-                    <label>Font</label>
-                    <select class="form-control form-control-sm">
+                    <div class="d-flex justify-content-center">
+                        Select something to inspect
+                    </div>
+                </div>
+            </div>
+
+            <div id="inspectorMenu">
+                <h5 class="text-center">
+                    Property Inspector
+                </h5>
+                <hr />
+                <div class="form-group">
+                    <label for="inputX">Position</label>
+                    <div class="d-flex justify-content-between">
+                        <input type="number" class="col-5 form-control form-control-sm" id="inputX">
+                        <input type="number" class="col-5 form-control form-control-sm" id="inputY">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputScaleX">Scale</label>
+                    <div class="d-flex justify-content-between">
+                        <input type="number" class="col-5 form-control form-control-sm" id="inputScaleX" min="0" max="5000">
+                        <input type="number" class="col-5 form-control form-control-sm" id="inputScaleY" min="0" max="5000">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputAngle">Angle</label>
+                    <input type="number" class="form-control form-control-sm" id="inputAngle" min="0" max="360">
+                </div>
+                <div class="form-group">
+                    <label for="inputOpacity">Opacity</label>
+                    <input type="number" class="form-control form-control-sm" id="inputOpacity" min="0" max="100">
+                </div>
+                <div class="form-group">
+                    <div class="d-flex justify-content-between">
+                        <button class="col-5 btn btn-primary btn-sm" id="btnMoveToTop">Move to Top</button>
+                        <button class="col-5 btn btn-primary btn-sm" id="btnMoveToBottom">Move to Bottom</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="backgroundMenu">
+                <h5 class="text-center">
+                    Background
+                </h5>
+                <hr />
+                <div class="input-background mb-3">
+                    <img src="https://via.placeholder.com/854x480" class="img-fluid"/>
+                </div>
+                <div class="input-background mb-3">
+                    <img src="https://via.placeholder.com/854x480" class="img-fluid"/>
+                </div>
+                <div class="input-background mb-3">
+                    <img src="https://via.placeholder.com/854x480" class="img-fluid"/>
+                </div>
+                <div class="input-background mb-3">
+                    <img src="https://via.placeholder.com/854x480" class="img-fluid"/>
+                </div>
+            </div>
+
+            <div id="textMenu">
+                <hr />
+                <div class="form-group">
+                    <label for="inputFontFamily">Font</label>
+                    <select class="form-control form-control-sm" id="inputFontFamily">
                         <option>Default select</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Font Size / Font Color</label>
+                    <label for="inputFontColor">Font Size / Font Color</label>
                     <div class="d-flex justify-content-between">
                         <input type="number" class="col-5 form-control form-control-sm" id="inputFontSize" min="1" max="360">
                         <input type="color" class="col-5 form-control form-control-sm" id="inputFontColor">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Content</label>
+                    <label for="inputContent">Content</label>
                     <textarea id="inputContent" class="form-control form-control-sm"></textarea>
                 </div>
             </div>
-            <div>
 
+            <div id="drawingMenu">
+                <h5 class="text-center">
+                    Drawing
+                </h5>
+                <hr />
+                <div class="form-group">
+                    <label for="inputBrushSize">Brush Size</label>
+                    <input type="number" class="form-control form-control-sm" id="inputBrushSize" min="1" max="48" value="10">
+                </div>
+                <div class="form-group">
+                    <label for="inputBrushColor">Brush Color</label>
+                    <input type="color" class="form-control form-control-sm" id="inputBrushColor">
+                </div>
             </div>
+
+            <div id="decorationMenu">
+                <h5 class="text-center">
+                    Decorations
+                </h5>
+                <hr />
+                <div class="input-background mb-3">
+                    <img src="https://via.placeholder.com/600x600" class="img-fluid"/>
+                </div>
+                <div class="input-background mb-3">
+                    <img src="https://via.placeholder.com/800x420" class="img-fluid"/>
+                </div>
+                <div class="input-background mb-3">
+                    <img src="https://via.placeholder.com/620x300" class="img-fluid"/>
+                </div>
+                <div class="input-background mb-3">
+                    <img src="https://via.placeholder.com/410x600" class="img-fluid"/>
+                </div>
+            </div>
+
+            <div id="audioMenu">
+                <h5 class="text-center">
+                    Audio
+                </h5>
+                <hr />
+                <div class="mb-3">
+                    <audio controls class="w-100">
+                        <source src="src/audio/sample.mp3" type="audio/mpeg"/>
+                        <source src="src/audio/sample.ogg" type="audio/ogg"/>
+                    </audio>
+                    <button class="btn btn-outline-primary btn-block btn-sm">Lorem - Sample Audio Track</button>
+                </div>
+                <div class="mb-3">
+                    <audio controls class="w-100">
+                        <source src="src/audio/sample.mp3" type="audio/mpeg"/>
+                        <source src="src/audio/sample.ogg" type="audio/ogg"/>
+                    </audio>
+                    <button class="btn btn-outline-primary btn-block btn-sm">Lorem Ipsum - Sample Long Name of Track</button>
+                </div>
+                <div class="mb-3">
+                    <audio controls class="w-100">
+                        <source src="src/audio/sample.mp3" type="audio/mpeg"/>
+                        <source src="src/audio/sample.ogg" type="audio/ogg"/>
+                    </audio>
+                    <button disabled class="btn btn-outline-primary btn-block btn-sm">Sample - Lorem Ipsum Dolor Sit Amet</button>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -103,8 +204,8 @@
 
 <script src="src/js/utils.js"></script>
 <script src="src/js/fabric.js"></script>
+<script src="src/js/inspector.js"></script>
 <script src="src/js/editor.js"></script>
 <script src="src/js/settings.js"></script>
-<script src="src/js/inspector.js"></script>
 </body>
 </html>

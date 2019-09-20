@@ -22,6 +22,10 @@
     width: 3rem;
 }
 
+.sidebar-wide {
+    width: 500px;
+}
+
 .page-content-wrapper {
     width: 100vw;
 }

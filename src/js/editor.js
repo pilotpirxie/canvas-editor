@@ -29,7 +29,12 @@ function resize() {
   canvas.setZoom(scaleRatio);
 }
 
-window.addEventListener("load", resize);
+window.addEventListener("load", () => {
+  // openSidebarMenu('init');
+  closeMenu();
+  resize();
+});
+
 window.addEventListener("resize", resize);
 
 document.getElementById('btn-background').addEventListener('click', ev => {
@@ -37,7 +42,7 @@ document.getElementById('btn-background').addEventListener('click', ev => {
 });
 
 document.getElementById('btn-text').addEventListener('click', ev => {
-  openSidebarMenu('text');
+  spawnText();
 });
 
 document.getElementById('btn-drawing').addEventListener('click', ev => {
@@ -50,6 +55,10 @@ document.getElementById('btn-decoration').addEventListener('click', ev => {
 
 document.getElementById('btn-audio').addEventListener('click', ev => {
   openSidebarMenu('audio');
+});
+
+document.getElementById('btn-close').addEventListener('click', ev => {
+  closeMenu();
 });
 
 function updateProperties() {
@@ -75,6 +84,14 @@ document.getElementById('inputOpacity').addEventListener('change', updatePropert
 
 function updateControls(options) {
   selectedObject = options.target;
+  console.log(options.target.get('type'));
+
+  if (options.target.type === 'text' || options.target.type === 'i-text') {
+    openSidebarMenu('inspectorText');
+  } else {
+    openSidebarMenu('inspector');
+  }
+
   document.getElementById('inputX').value = Number.parseInt(options.target.left);
   document.getElementById('inputY').value = Number.parseInt(options.target.top);
   document.getElementById('inputScaleX').value = Number.parseInt(options.target.scaleX*100);
@@ -91,5 +108,6 @@ canvas.on({
   'object:skewing': updateControls,
   'selection:created': updateControls,
   'object:modified': updateControls,
-  'selection:updated': updateControls
+  'selection:updated': updateControls,
+  'selection:cleared': () => openSidebarMenu('initial'),
 });

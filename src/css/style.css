@@ -16,3 +16,8 @@ canvas {
     height: 64px;
     padding: 10px;
 }
+
+.input-background,
+.cursor-pointer {
+    cursor: pointer;
+}
