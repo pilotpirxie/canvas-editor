@@ -1,0 +1,3 @@
+export default {
+  SET_SIDEBAR_ACTIVE_TAB: 'SIDEBAR/SET_SIDEBAR_ACTIVE_TAB',
+};

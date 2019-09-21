@@ -1,1 +1,5 @@
-export default {};
+import config from 'reducers/config';
+
+export default {
+  config
+};
