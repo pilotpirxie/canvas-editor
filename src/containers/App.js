@@ -6,6 +6,7 @@ import actionTypes from "constants/actionTypes";
 import NarrowSidebar from "components/NarrowSidebar";
 import WideSidebar from "components/WideSidebar";
 import ContentWrapper from "components/ContentWrapper";
+import FontPreloader from "components/FontPreloader";
 
 import Canvas from "containers/Canvas";
 import PropertyInspector from "containers/PropertyInspector";
@@ -41,7 +42,7 @@ class App extends PureComponent {
         <WideSidebar>
           <PropertyInspector />
           <BackgroundMenu />
-          {activeTab === 2 && <TextMenu />}
+          <TextMenu />
           <DrawingMenu />
           {activeTab === 4 && <DecorationMenu />}
           {activeTab === 5 && <AudioMenu />}
@@ -49,6 +50,7 @@ class App extends PureComponent {
         <ContentWrapper>
           <Canvas />
         </ContentWrapper>
+        <FontPreloader />
       </div>
     );
   }

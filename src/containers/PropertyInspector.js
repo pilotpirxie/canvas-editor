@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import actionTypes from "../constants/actionTypes";
+
+import actionTypes from "constants/actionTypes";
+import fontFamilies from "constants/fontFamilies";
 
 class PropertyInspector extends Component {
   constructor(props) {
@@ -14,8 +16,20 @@ class PropertyInspector extends Component {
 
     window.canvas.getObjects().forEach(obj => {
       if(obj.get("uuid") === selectedObjectUUID) {
-        obj.set(key, val).setCoords();
-        window.canvas.renderAll();
+
+        if (key === "fontFamily") {
+          let myfont = new window.FontFaceObserver(val);
+          myfont.load().then(() => {
+            obj.set("fontFamily", val);
+            window.canvas.requestRenderAll();
+          }).catch(err => {
+            console.error(err);
+          });
+        } else {
+          obj.set(key, val).setCoords();
+          window.canvas.requestRenderAll();
+        }
+
       }
     });
 
@@ -118,9 +132,11 @@ class PropertyInspector extends Component {
                   className="form-control form-control-sm"
                   value={this.props.inspector.fontFamily}
                   onChange={ev => this.setProperty("fontFamily", ev.target.value)}>
-                  <option value="Arial">Arial</option>
-                  <option value="Lato">Lato</option>
-                  <option value="Times New Roman">Times New Roman</option>
+                  {fontFamilies.map(el => {
+                    return <option
+                      value={el}
+                      key={el}>{el}</option>;
+                  })}
                 </select>
               </div>
               <div className="form-group">

@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { fabric } from "fabric";
 import { connect } from "react-redux";
 import actionTypes from "constants/actionTypes";
-import uuidv4 from 'uuid/v4';
+import uuidv4 from "uuid/v4";
+import strokeStyle from "constants/strokeStyle";
 
 class Canvas extends Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class Canvas extends Component {
     this.onResize = this.onResize.bind(this);
     this.onClearSelection = this.onClearSelection.bind(this);
     this.onUpdateControls = this.onUpdateControls.bind(this);
+    this.deleteObject = this.deleteObject.bind(this);
     this.canvasEditorContainer = React.createRef();
   }
 
@@ -38,6 +40,20 @@ class Canvas extends Component {
       "selection:cleared": this.onClearSelection,
     });
 
+    document.addEventListener("keydown", (event) => {
+      const keyName = event.key;
+      if (keyName === "Delete") {
+        return this.deleteObject();
+      }
+    }, false);
+
+  }
+
+  deleteObject() {
+    window.canvas.getActiveObjects().forEach((obj) => {
+      window.canvas.remove(obj);
+    });
+    window.canvas.discardActiveObject().renderAll();
   }
 
   onClearSelection() {
@@ -53,9 +69,11 @@ class Canvas extends Component {
   onUpdateControls(options) {
     const isTypeText = options.target.get("type") === "text" || options.target.get("type") === "i-text";
     const uuid = options.target.get("uuid");
+    options.target.set(strokeStyle);
+    window.canvas.requestRenderAll();
 
     if (!uuid) {
-      options.target.set('uuid', uuidv4());
+      options.target.set("uuid", uuidv4());
     }
 
     this.props.dispatch({
@@ -87,8 +105,13 @@ class Canvas extends Component {
 
   render() {
     return (
-      <div className="w-100 h-100 d-flex justify-content-around align-items-center" ref={this.canvasEditorContainer}>
-        <canvas id="c" width={854} height={480} />
+      <div
+        className="w-100 h-100 d-flex justify-content-around align-items-center"
+        ref={this.canvasEditorContainer}>
+        <canvas
+          id="c"
+          width={854}
+          height={480} />
       </div>
     );
   }
