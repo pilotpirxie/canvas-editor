@@ -40,7 +40,7 @@ class App extends PureComponent {
         <NarrowSidebar changeActiveTab={this.changeActiveTab}/>
         <WideSidebar>
           <PropertyInspector />
-          {activeTab === 1 && <BackgroundMenu />}
+          <BackgroundMenu />
           {activeTab === 2 && <TextMenu />}
           <DrawingMenu />
           {activeTab === 4 && <DecorationMenu />}
