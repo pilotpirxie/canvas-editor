@@ -29,9 +29,6 @@
     "extends": "react-app",
     "rules": {
       "linebreak-style": 0,
-      "import/no-unresolved": [
-        2
-      ],
       "quotes": [
         1,
         "double"

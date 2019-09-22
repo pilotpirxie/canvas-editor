@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { fabric } from "fabric";
 import { connect } from "react-redux";
-import actionTypes from "../constants/actionTypes";
+import actionTypes from "constants/actionTypes";
+import uuidv4 from 'uuid/v4';
 
 class Canvas extends Component {
   constructor(props) {
@@ -51,6 +52,11 @@ class Canvas extends Component {
   
   onUpdateControls(options) {
     const isTypeText = options.target.get("type") === "text" || options.target.get("type") === "i-text";
+    const uuid = options.target.get("uuid");
+
+    if (!uuid) {
+      options.target.set('uuid', uuidv4());
+    }
 
     this.props.dispatch({
       type: actionTypes.SET_INSPECTOR_VALUES,

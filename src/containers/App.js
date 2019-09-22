@@ -1,13 +1,13 @@
-import React, {PureComponent} from 'react';
+import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 
-import actionTypes from 'constants/actionTypes';
+import actionTypes from "constants/actionTypes";
 
-import NarrowSidebar from 'components/NarrowSidebar';
+import NarrowSidebar from "components/NarrowSidebar";
 import WideSidebar from "components/WideSidebar";
 import ContentWrapper from "components/ContentWrapper";
 
-import Canvas from 'containers/Canvas';
+import Canvas from "containers/Canvas";
 import PropertyInspector from "containers/PropertyInspector";
 import BackgroundMenu from "containers/BackgroundMenu";
 import DecorationMenu from "containers/DecorationMenu";
@@ -23,11 +23,18 @@ class App extends PureComponent {
   }
 
   changeActiveTab(tabIndex) {
-    this.props.dispatch({type: actionTypes.SET_SIDEBAR_ACTIVE_TAB, tabIndex})
+    if (tabIndex === 3) {
+      window.canvas.set("isDrawingMode", true);
+    } else {
+      window.canvas.set("isDrawingMode", false);
+    }
+
+    this.props.dispatch({ type: actionTypes.SET_SIDEBAR_ACTIVE_TAB, tabIndex });
   }
 
   render() {
-    const {activeTab} = this.props.config;
+    const { activeTab } = this.props.config;
+
     return (
       <div className="wrapper d-flex">
         <NarrowSidebar changeActiveTab={this.changeActiveTab}/>
@@ -35,7 +42,7 @@ class App extends PureComponent {
           <PropertyInspector />
           {activeTab === 1 && <BackgroundMenu />}
           {activeTab === 2 && <TextMenu />}
-          {activeTab === 3 && <DrawingMenu />}
+          <DrawingMenu />
           {activeTab === 4 && <DecorationMenu />}
           {activeTab === 5 && <AudioMenu />}
         </WideSidebar>
@@ -50,8 +57,8 @@ class App extends PureComponent {
 const mapStateToProps = state => {
   return {
     config: state.config,
-  }
+  };
 };
-const mapDispatchToProps = dispatch => ({dispatch});
+const mapDispatchToProps = dispatch => ({ dispatch });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
