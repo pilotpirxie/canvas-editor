@@ -9,16 +9,16 @@ class BackgroundMenu extends Component {
         </h5>
         <hr />
         <div className="input-background mb-3">
-          <img src="https://via.placeholder.com/854x480" className="img-fluid" />
+          <img src="https://via.placeholder.com/854x480" className="img-fluid" alt="test"/>
         </div>
         <div className="input-background mb-3">
-          <img src="https://via.placeholder.com/854x480" className="img-fluid" />
+          <img src="https://via.placeholder.com/854x480" className="img-fluid" alt="test"/>
         </div>
         <div className="input-background mb-3">
-          <img src="https://via.placeholder.com/854x480" className="img-fluid" />
+          <img src="https://via.placeholder.com/854x480" className="img-fluid" alt="test"/>
         </div>
         <div className="input-background mb-3">
-          <img src="https://via.placeholder.com/854x480" className="img-fluid" />
+          <img src="https://via.placeholder.com/854x480" className="img-fluid" alt="test"/>
         </div>
       </div>
     );

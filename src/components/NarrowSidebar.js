@@ -12,22 +12,22 @@ export default function NarrowSidebar(props) {
   return <div className="bg-light sidebar-wrapper p-2 bg-primary">
     <div className="small">
       <button type="button" className="btn btn-primary btn-block" onClick={() => props.changeActiveTab(0)}>
-        <img src={CursorIcon} className="img-fluid" />
+        <img src={CursorIcon} className="img-fluid" alt="Cursor Button"/>
       </button>
       <button type="button" className="btn btn-primary btn-block" onClick={() => props.changeActiveTab(1)}>
-        <img src={BackgroundIcon} className="img-fluid" />
+        <img src={BackgroundIcon} className="img-fluid" alt="Background Button"/>
       </button>
       <button type="button" className="btn btn-primary btn-block" onClick={() => props.changeActiveTab(2)}>
-        <img src={TextIcon} className="img-fluid" />
+        <img src={TextIcon} className="img-fluid" alt="Text Button"/>
       </button>
       <button type="button" className="btn btn-primary btn-block" onClick={() => props.changeActiveTab(3)}>
-        <img src={DrawingIcon} className="img-fluid" />
+        <img src={DrawingIcon} className="img-fluid" alt="Drawing Button"/>
       </button>
       <button type="button" className="btn btn-primary btn-block" onClick={() => props.changeActiveTab(4)}>
-        <img src={DecorationIcon} className="img-fluid" />
+        <img src={DecorationIcon} className="img-fluid" alt="Decoration Button"/>
       </button>
       <button type="button" className="btn btn-primary btn-block" onClick={() => props.changeActiveTab(5)}>
-        <img src={AudioIcon} className="img-fluid" />
+        <img src={AudioIcon} className="img-fluid" alt="Audio Button"/>
       </button>
     </div>
   </div>;
