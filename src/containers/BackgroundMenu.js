@@ -32,7 +32,7 @@ class BackgroundMenu extends Component {
             return <div className="input-background mb-3" key={el}>
               <img
                 src={el}
-                className="img-fluid"
+                className="img-fluid img-thumbnail"
                 alt="test"
                 onClick={() => this.onSetBackground(el)}/>
             </div>;
