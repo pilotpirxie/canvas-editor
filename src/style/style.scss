@@ -21,3 +21,7 @@ canvas {
 .cursor-pointer {
     cursor: pointer;
 }
+
+.img-fluid > img {
+    max-width: 100%;
+}

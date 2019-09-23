@@ -77,7 +77,7 @@ class Canvas extends Component {
       options.target.set("uuid", uuidv4());
     }
 
-    if (this.props.selectedObjectUUID !== options.target.get('uuid')) {
+    if (this.props.selectedObjectUUID !== options.target.get("uuid")) {
       this.props.dispatch({ type: actionTypes.SET_SIDEBAR_ACTIVE_TAB, tabIndex: 0 });
     }
 

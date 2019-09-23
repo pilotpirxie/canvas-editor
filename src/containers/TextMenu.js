@@ -13,7 +13,7 @@ class TextMenu extends Component {
 
   onAddText(fontFamily = "Lato") {
     const text = new fabric.IText("Type Something", {
-      fontSize: 100,
+      fontSize: 60,
       fontFamily: fontFamily,
       fill: "#000000"
     });
@@ -35,7 +35,7 @@ class TextMenu extends Component {
               className="mb-3 cursor-pointer"
               key={el}
               onClick={() => this.onAddText(el)}>
-              <p style={{ fontFamily: el, fontSize: '1.75rem' }}>Lorem ipsum...</p>
+              <p style={{ fontFamily: el, fontSize: "1.75rem" }}>Lorem ipsum...</p>
             </div>;
           })}
         </div>}

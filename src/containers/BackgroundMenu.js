@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import backgrounds from "constants/backgrounds";
-import {fabric} from 'fabric';
+import { fabric } from "fabric";
+import config from "constants/config";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 class BackgroundMenu extends Component {
   constructor(props) {
@@ -29,12 +31,14 @@ class BackgroundMenu extends Component {
           </h5>
           <hr />
           {backgrounds.map(el => {
-            return <div className="input-background mb-3" key={el}>
-              <img
-                src={el}
-                className="img-fluid img-thumbnail"
-                alt="test"
-                onClick={() => this.onSetBackground(el)}/>
+            return <div
+              className="input-background mb-3 img-fluid img-thumbnail"
+              key={el}
+              onClick={() => this.onSetBackground(config.CDN_BACKGROUNDS + el)}>
+              <LazyLoadImage
+                alt={el}
+                src={config.CDN_BACKGROUNDS + el}
+              />
             </div>;
           })}
         </div>}
