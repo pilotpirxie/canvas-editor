@@ -1,8 +1,7 @@
 export default [
-  "https://placeimg.com/854/480/any",
-  "https://placeimg.com/854/480/animals",
-  "https://placeimg.com/854/480/architecture",
-  "https://placeimg.com/854/480/nature",
-  "https://placeimg.com/854/480/people",
-  "https://placeimg.com/854/480/tech",
+  "https://cdn.gamenado.com/external_web/canvasdemo/congrats.jpg",
+  "https://cdn.gamenado.com/external_web/canvasdemo/goodjob.jpg",
+  "https://cdn.gamenado.com/external_web/canvasdemo/no-slogan.jpg",
+  "https://cdn.gamenado.com/external_web/canvasdemo/rocks.jpg",
+  "https://cdn.gamenado.com/external_web/canvasdemo/thanks.jpg",
 ];

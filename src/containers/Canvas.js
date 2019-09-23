@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import actionTypes from "constants/actionTypes";
 import uuidv4 from "uuid/v4";
 import strokeStyle from "constants/strokeStyle";
+import config from "constants/config";
 
 class Canvas extends Component {
   constructor(props) {
@@ -98,9 +99,10 @@ class Canvas extends Component {
   onResize() {
     const width = this.canvasEditorContainer.current.offsetWidth;
     const height = this.canvasEditorContainer.current.offsetHeight;
-    let scaleRatio = Math.min(width * 0.95 / 854, height * 0.95 / 480, 1);
-    window.canvas.setDimensions({ width: 854 * scaleRatio, height: 480 * scaleRatio });
+    let scaleRatio = Math.min(width * 0.95 / config.WIDTH, height * 0.95 / config.HEIGHT, 1);
+    window.canvas.setDimensions({ width: config.WIDTH * scaleRatio, height: config.HEIGHT * scaleRatio });
     window.canvas.setZoom(scaleRatio);
+    window.canvas.renderAll();
   }
 
   render() {
@@ -110,8 +112,8 @@ class Canvas extends Component {
         ref={this.canvasEditorContainer}>
         <canvas
           id="c"
-          width={854}
-          height={480} />
+          width={config.WIDTH}
+          height={config.HEIGHT} />
       </div>
     );
   }

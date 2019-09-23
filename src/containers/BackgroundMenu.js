@@ -12,8 +12,11 @@ class BackgroundMenu extends Component {
   
   onSetBackground(url) {
     fabric.Image.fromURL(url, function(img) {
-      window.canvas.setBackgroundImage(img, window.canvas.renderAll.bind(window.canvas), {
-      });
+      window.canvas.setBackgroundImage(img, window.canvas.renderAll.bind(window.canvas), {});
+      img.scaleToWidth(window.canvas.width);
+      img.scaleToHeight(window.canvas.height);
+      window.canvas.setBackgroundImage(img);
+      window.canvas.requestRenderAll();
     });
   }
   
