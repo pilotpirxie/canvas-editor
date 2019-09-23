@@ -8,7 +8,7 @@ export default function FontPreloader(props) {
       return <p
         style={{ fontFamily: el }}
         key={el}>
-        {"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\\\/@°+=*$£€<>"}
+        {"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝ;ðÐâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸåÅæÆ;œŒ;ßøØ¢¿¡€çÇąęłżóź.,;:?!-_~#\"'&()[]|`\\\\/@°+=*$£€<>"}
       </p>;
     }).catch(err => {
       return err;
@@ -20,7 +20,7 @@ export default function FontPreloader(props) {
       return <p
         style={{ fontFamily: el }}
         key={el}>
-        {"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\\\/@°+=*$£€<>"}
+        {"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝ;ðÐâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸåÅæÆ;œŒ;ßøØ¢¿¡€çÇąęłżóź.,;:?!-_~#\"'&()[]|`\\\\/@°+=*$£€<>"}
       </p>;
     })}
   </div>;
