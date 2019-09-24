@@ -19,6 +19,8 @@ class BackgroundMenu extends Component {
       img.scaleToHeight(window.canvas.height);
       window.canvas.setBackgroundImage(img);
       window.canvas.requestRenderAll();
+    }, {
+      crossOrigin: "anonymous"
     });
   }
   

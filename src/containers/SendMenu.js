@@ -36,6 +36,7 @@ class DrawingMenu extends Component {
             <div className="d-flex justify-content-between">
               <a
                 ref={this.downloadPNG}
+                href="#"
                 className="col-12 btn btn-primary"
                 download={`picture-${Math.round(Math.random() * 899) + 100}.png`}>
                 <p

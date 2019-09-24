@@ -17,9 +17,11 @@ class DecorationMenu extends Component {
     fabric.Image.fromURL(url, function(img) {
       window.canvas.add(img);
       img.set("uuid", uuidv4());
-      img.set('scaleX', 0.5);
-      img.set('scaleY', 0.5);
+      img.set("scaleX", 0.5);
+      img.set("scaleY", 0.5);
       img.center();
+    }, {
+      crossOrigin: "anonymous"
     });
   }
 
