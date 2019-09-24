@@ -30,7 +30,7 @@ class DecorationMenu extends Component {
       <div>
         {this.props.config.activeTab === 4 && <div id="backgroundMenu">
           <h5 className="text-center">
-            Decorations
+            Add Decorations
           </h5>
           <hr />
           <div className="row d-flex justify-content-around p-3">

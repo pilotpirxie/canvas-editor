@@ -29,7 +29,7 @@ class BackgroundMenu extends Component {
       <div>
         {this.props.config.activeTab === 1 && <div id="backgroundMenu">
           <h5 className="text-center">
-            Background
+            Change Background
           </h5>
           <hr />
           {backgrounds.map(el => {

@@ -27,7 +27,7 @@ class TextMenu extends Component {
       <div>
         {this.props.config.activeTab === 2 && <div>
           <h5 className="text-center">
-            Text
+            Add Text
           </h5>
           <hr />
           {fontFamilies.map(el => {

@@ -24,7 +24,7 @@ class AudioMenu extends Component {
       <div>
         {this.props.config.activeTab === 5 && <div id="audioMenu">
           <h5 className="text-center">
-          Audio
+          Add Audio
           </h5>
           <hr />
           {audio.map(el => {
