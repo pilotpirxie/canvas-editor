@@ -10,7 +10,6 @@
 .inspector-wrapper {
     overflow-y: scroll;
     height: 100vh;
-    box-shadow: 0 0 0.75rem rgba(0,0,0,0.2);
 }
 
 .sidebar-wrapper .sidebar-heading {
@@ -19,7 +18,7 @@
 }
 
 .sidebar-wrapper .small {
-    width: 3rem;
+    width: 4rem;
 }
 
 .sidebar-wide {
@@ -48,3 +47,8 @@
         margin-left: -15rem;
     }
 }
+
+.bg-dark-blue {
+    background: #232428 !important;
+}
+

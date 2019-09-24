@@ -116,6 +116,7 @@ class Canvas extends Component {
         ref={this.canvasEditorContainer}>
         <canvas
           id="c"
+          className="shadow"
           width={config.WIDTH}
           height={config.HEIGHT} />
       </div>

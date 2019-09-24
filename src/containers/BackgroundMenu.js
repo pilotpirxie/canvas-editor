@@ -32,7 +32,7 @@ class BackgroundMenu extends Component {
           <hr />
           {backgrounds.map(el => {
             return <div
-              className="input-background mb-3 img-fluid img-thumbnail"
+              className="input-background mb-3 img-fluid img-thumbnail shadow"
               key={el}
               onClick={() => this.onSetBackground(config.CDN_BACKGROUNDS + el)}>
               <LazyLoadImage

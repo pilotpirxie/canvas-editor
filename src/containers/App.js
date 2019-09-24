@@ -15,6 +15,7 @@ import DecorationMenu from "containers/DecorationMenu";
 import AudioMenu from "containers/AudioMenu";
 import DrawingMenu from "containers/DrawingMenu";
 import TextMenu from "containers/TextMenu";
+import SendMenu from "containers/SendMenu";
 
 class App extends PureComponent {
   constructor(props) {
@@ -38,7 +39,7 @@ class App extends PureComponent {
 
     return (
       <div className="wrapper d-flex">
-        <NarrowSidebar changeActiveTab={this.changeActiveTab}/>
+        <NarrowSidebar changeActiveTab={this.changeActiveTab} activeTab={activeTab}/>
         <WideSidebar>
           <PropertyInspector />
           <BackgroundMenu />
@@ -46,6 +47,7 @@ class App extends PureComponent {
           <DrawingMenu />
           <DecorationMenu />
           {activeTab === 5 && <AudioMenu />}
+          <SendMenu />
         </WideSidebar>
         <ContentWrapper>
           <Canvas />

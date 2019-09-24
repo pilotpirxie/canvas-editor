@@ -17,6 +17,8 @@ class DecorationMenu extends Component {
     fabric.Image.fromURL(url, function(img) {
       window.canvas.add(img);
       img.set("uuid", uuidv4());
+      img.set('scaleX', 0.5);
+      img.set('scaleY', 0.5);
       img.center();
     });
   }
@@ -29,10 +31,10 @@ class DecorationMenu extends Component {
             Decorations
           </h5>
           <hr />
-          <div className="row">
+          <div className="row d-flex justify-content-around p-3">
             {decorations.map(el => {
               return <div
-                className="input-background mb-3 col-4 img-fluid img-thumbnail"
+                className="input-background m-3 p-4 col-12 img-fluid img-thumbnail shadow"
                 key={el}
                 onClick={() => this.onAddDecoration(config.CDN_DECORATIONS + el)}>
                 <LazyLoadImage

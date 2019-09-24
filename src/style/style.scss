@@ -1,5 +1,5 @@
 body {
-    background: #d1d3d5 !important;
+    background: #e2e4e6 !important;
     width: 100vw;
     height: 100vh;
     padding: 0;
@@ -8,7 +8,6 @@ body {
 }
 
 canvas {
-    box-shadow: 0 0 0.75rem rgba(0,0,0,0.2);
     width: 100vw;
 }
 
@@ -24,4 +23,33 @@ canvas {
 
 .img-fluid > img {
     max-width: 100%;
+}
+
+.active-button {
+    background: #1F9BCF;
+}
+
+.active-button:hover {
+    background: #09c0cf;
+}
+
+.btn-sidebar {
+    color: #fff;
+}
+
+.btn-sidebar:hover {
+    color: #fff;
+}
+
+.btn,
+.shadow {
+    -webkit-box-shadow: 0px 0px 22px -1px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 22px -1px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 22px -1px rgba(0,0,0,0.2);
+}
+
+.form-control {
+    -webkit-box-shadow: inset 0px 0px 22px -1px rgba(0,0,0,0.1);
+    -moz-box-shadow: inset 0px 0px 22px -1px rgba(0,0,0,0.1);
+    box-shadow: inset 0px 0px 22px -1px rgba(0,0,0,0.1);
 }

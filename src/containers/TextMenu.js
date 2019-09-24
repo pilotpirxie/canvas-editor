@@ -32,10 +32,10 @@ class TextMenu extends Component {
           <hr />
           {fontFamilies.map(el => {
             return <div
-              className="mb-3 cursor-pointer"
+              className="mb-3 cursor-pointer shadow p-3"
               key={el}
               onClick={() => this.onAddText(el)}>
-              <p style={{ fontFamily: el, fontSize: "1.75rem" }}>Lorem ipsum...</p>
+              <div style={{ fontFamily: el, fontSize: "1.5rem" }}>{el}</div>
             </div>;
           })}
         </div>}
