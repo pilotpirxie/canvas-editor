@@ -36,7 +36,7 @@ class DecorationMenu extends Component {
           <div className="row d-flex justify-content-around p-3">
             {decorations.map(el => {
               return <div
-                className="input-background m-3 p-4 col-12 img-fluid img-thumbnail shadow"
+                className="input-background p-2 col-4 img-fluid img-thumbnail shadow"
                 key={el}
                 onClick={() => this.onAddDecoration(config.CDN_DECORATIONS + el)}>
                 <LazyLoadImage

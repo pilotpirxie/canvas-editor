@@ -46,7 +46,7 @@ class App extends PureComponent {
           <TextMenu />
           <DrawingMenu />
           <DecorationMenu />
-          {activeTab === 5 && <AudioMenu />}
+          <AudioMenu />
           <SendMenu />
         </WideSidebar>
         <ContentWrapper>
