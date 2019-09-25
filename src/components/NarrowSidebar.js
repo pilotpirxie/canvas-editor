@@ -62,15 +62,6 @@ export default function NarrowSidebar(props) {
         className={`btn btn-sidebar btn-block m-0 p-3 ${props.activeTab === 5 ? "active-button" : ""}`}
         onClick={() => props.changeActiveTab(5)}>
         <img
-          src={AudioIcon}
-          className="img-fluid"
-          alt="Audio Button"/>
-      </button>
-      <button
-        type="button"
-        className={`btn btn-sidebar btn-block m-0 p-3 ${props.activeTab === 6 ? "active-button" : ""}`}
-        onClick={() => props.changeActiveTab(6)}>
-        <img
           src={SendIcon}
           className="img-fluid"
           alt="Send Button"/>

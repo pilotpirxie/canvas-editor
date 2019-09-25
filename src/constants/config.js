@@ -1,7 +1,6 @@
 export default {
   WIDTH: 708,
   HEIGHT: 520,
-  CDN_BACKGROUNDS: "https://cdn.gamenado.com/external_web/canvasdemo/backgrounds/",
-  CDN_DECORATIONS: "https://cdn.gamenado.com/external_web/canvasdemo/icons/",
-  CDN_AUDIO: "https://cdn.gamenado.com/external_web/canvasdemo/audio/"
+  CDN_BACKGROUNDS: "http://localhost/cdn/",
+  CDN_DECORATIONS: "http://localhost/cdn/",
 };

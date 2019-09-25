@@ -12,7 +12,6 @@ import Canvas from "containers/Canvas";
 import PropertyInspector from "containers/PropertyInspector";
 import BackgroundMenu from "containers/BackgroundMenu";
 import DecorationMenu from "containers/DecorationMenu";
-import AudioMenu from "containers/AudioMenu";
 import DrawingMenu from "containers/DrawingMenu";
 import TextMenu from "containers/TextMenu";
 import SendMenu from "containers/SendMenu";
@@ -39,14 +38,15 @@ class App extends PureComponent {
 
     return (
       <div className="wrapper d-flex">
-        <NarrowSidebar changeActiveTab={this.changeActiveTab} activeTab={activeTab}/>
+        <NarrowSidebar
+          changeActiveTab={this.changeActiveTab}
+          activeTab={activeTab}/>
         <WideSidebar>
           <PropertyInspector />
           <BackgroundMenu />
           <TextMenu />
           <DrawingMenu />
           <DecorationMenu />
-          <AudioMenu />
           <SendMenu />
         </WideSidebar>
         <ContentWrapper>

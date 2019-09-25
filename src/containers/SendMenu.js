@@ -27,7 +27,7 @@ class DrawingMenu extends Component {
 
     return (
       <div>
-        {activeTab === 6 && <div id="drawingMenu">
+        {activeTab === 5 && <div id="drawingMenu">
           <h5 className="text-center">
             Save or Send
           </h5>
