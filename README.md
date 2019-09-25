@@ -15,9 +15,10 @@ yarn
 yarn start
 ```
 
-### License
+### License & Credits
 ```
 Icons by FlatIcon https://www.flaticon.com/
 Bootstrap skin by Bootswatch https://bootswatch.com/
 Fabric.js https://github.com/fabricjs/fabric.js
+Canvas Editor MIT 
 ```
